@@ -31,6 +31,24 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  // Preload all images for the selected book to ensure instant page turns
+  useEffect(() => {
+    const activeBook = storiesData.find(b => b.id === currentBookId);
+    if (activeBook) {
+      const urls = [];
+      if (activeBook.coverImage) urls.push(activeBook.coverImage);
+      activeBook.pages.forEach(p => {
+        if (p.imageUrl) urls.push(p.imageUrl);
+      });
+
+      // Trigger browser cache preloading
+      urls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+      });
+    }
+  }, [currentBookId]);
+
   const selectBook = (bookId) => {
     if (bookId) {
       window.location.hash = `#book-${bookId}`;
