@@ -429,7 +429,6 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: fadeIn 0.4s ease-out;
 }
 
 /* Right Page (Story Text) */
@@ -456,7 +455,6 @@ button {
   flex-grow: 1;
   display: flex;
   align-items: center;
-  animation: fadeIn 0.4s ease-out;
 }
 
 /* Fancy drop-cap for book chapter feeling */
