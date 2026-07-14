@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="woodGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5a2b" />
+      <stop offset="100%" stop-color="#4a2e16" />
+    </linearGradient>
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2b865" />
+      <stop offset="100%" stop-color="#b58728" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+  <!-- Background Board -->
+  <rect width="512" height="512" rx="128" fill="url(#woodGrad)" />
+  
+  <!-- Outer Ring Decoration -->
+  <rect x="24" y="24" width="464" height="464" rx="104" fill="none" stroke="#e2b865" stroke-width="4" opacity="0.3" />
+  
+  <!-- Stacked Books Illustration -->
+  <g filter="url(#shadow)" transform="translate(64, 40)">
+    <!-- Book 1 (Bottom vertical shelf base or book) -->
+    <rect x="40" y="340" width="300" height="60" rx="10" fill="#a33835" />
+    <rect x="340" y="345" width="20" height="50" rx="4" fill="#f0d59e" />
+    <line x1="80" y1="340" x2="80" y2="400" stroke="#f2c852" stroke-width="6" />
+    
+    <!-- Book 2 (Middle horizontal leaning book) -->
+    <rect x="70" y="270" width="240" height="50" rx="8" fill="#2c5e8a" />
+    <rect x="310" y="275" width="15" height="40" rx="3" fill="#f0d59e" />
+    
+    <!-- Book 3 (Top vertical standing book) -->
+    <g transform="translate(100, 40)">
+      <rect x="0" y="0" width="70" height="200" rx="12" fill="url(#bookGrad)" />
+      <!-- Book spine details -->
+      <line x1="35" y1="30" x2="35" y2="170" stroke="#4a2e16" stroke-width="8" stroke-dasharray="1 15" stroke-linecap="round" />
+      <circle cx="35" cy="100" r="14" fill="#4a2e16" />
+      <path d="M30 100 L40 100 M35 95 L35 105" stroke="#f0d59e" stroke-width="3" stroke-linecap="round" />
+    </g>
+    
+    <!-- Magic sparkles -->
+    <path d="M 330 80 L 335 95 L 350 100 L 335 105 L 330 120 L 325 105 L 310 100 L 325 95 Z" fill="#ffffff" opacity="0.9" />
+    <path d="M 390 140 L 393 148 L 401 150 L 393 152 L 390 160 L 387 152 L 379 150 L 387 148 Z" fill="#f2c852" opacity="0.8" />
+    <path d="M 280 40 L 282 45 L 287 46 L 282 47 L 280 52 L 278 47 L 273 46 L 278 45 Z" fill="#f2c852" opacity="0.8" />
+  </g>
+</svg>
