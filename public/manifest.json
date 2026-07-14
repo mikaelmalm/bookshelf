@@ -1,0 +1,18 @@
+{
+  "name": "Vincents Bokhylla",
+  "short_name": "Bokhylla",
+  "description": "En interaktiv bokhylla för barnböcker skapade med Gemini.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#2c1d11",
+  "theme_color": "#8b5a2b",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
