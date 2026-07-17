@@ -1,97 +1,97 @@
-# 📖 Vincents Bokhylla (Vincents Storybooks)
+# 📖 Vincent's Bookshelf (Vincents Bokhylla)
 
-En mysig och premium digital bokhylla och Progressive Web App (PWA) byggd för Vincent för att läsa och lyssna på illustrerade barnböcker skapade med Google Gemini.
+A cozy, premium digital bookshelf and Progressive Web App (PWA) built for Vincent to read and listen to illustrated children's books created with Google Gemini.
 
-Appen är designad för att vara extremt ren, enkel och lättanvänd för barn, med en responsiv layout som fungerar lika bra på surfplattor och mobiler som på datorn.
+The app is designed to be extremely clean, simple, and child-friendly, with a responsive layout that works beautifully on tablets, mobile viewports, and desktop screens.
 
-👉 **[Klicka här för att besöka bokhyllan live!](https://mikaelmalm.github.io/bookshelf/)**
+👉 **[Click here to visit the bookshelf live!](https://mikaelmalm.github.io/bookshelf/)**
 
 ---
 
-## ✨ Funktioner (Features)
+## ✨ Features
 
-- **Barnvänligt gränssnitt**: En avskalad bokhylla i mörkt träpanel där bokomslagen visas stort och tydligt så att det är enkelt att välja saga.
-- **Smarta layouter**:
-  - *Dator*: Visar klassiska bokuppslag sida vid sida med breda, luftiga marginaler (110px) för en äkta bokkänsla.
-  - *Mobil*: Helskärmslayout där bilden täcker överdelen och texten ligger under.
-- **Enkel bläddring**: På mobilen trycker man bara på höger sida av skärmen för att bläddra framåt, och vänster sida för att bläddra bakåt. Betydligt enklare för små fingrar än små knappar!
-- **Snabba sidladdningar**: Alla bilder förladdas i bakgrunden så fort en bok öppnas, vilket gör att sidorna vänder blixtsnabbt utan väntetid.
-- **Ljuduppläsning**: En diskret ljudknapp gör att barnet kan få texten uppläst direkt i webbläsaren.
-- **Installera som App (PWA)**: Hemsidan kan sparas på hemskärmen på mobilen eller surfplattan och fungerar helt offline utan internetuppkoppling tack vare lokal cachning.
+- **Child-Friendly Interface**: A clean bookshelf styled in dark wood paneling where book covers are displayed large and clear, making it simple to choose a story.
+- **Smart Layouts**:
+  - *Desktop*: Displays classic double-page spreads side-by-side with generous, airy margins (110px) for an authentic book reading experience.
+  - *Mobile*: A clean full-screen layout where the illustration pins to the top and the story text rests underneath.
+- **Simple Page Turns**: On mobile, simply tap the right side of the viewport to turn the page forward, and tap the left side to go backward. Bypasses tiny buttons for easier use by small fingers!
+- **Instant Page Transitions**: All illustrations are preloaded in the background as soon as a book is selected, ensuring instant page turns without any network lag.
+- **Text-to-Speech**: A discrete audio button reads the story text out loud directly inside the browser.
+- **Installable PWA**: The application can be saved to the home screen on phones or tablets and runs entirely offline without internet thanks to local service worker caching.
 
+---
 
+## 🛠️ Add More Books
 
-## 🛠️ Lägg till fler böcker (Add more stories)
+To easily expand Vincent's library, there is a built-in scraper utility. You can run it either using a Gemini share link directly, or with a saved local HTML file if Google requires a login for your link.
 
-För att enkelt bygga ut Vincents bibliotek finns ett inbyggt skrapverktyg. Du kan köra det antingen med en Gemini-delningslänk, eller med en sparad lokal HTML-fil om Google kräver inloggning för din länk.
-
-### Alternativ 1: Direkt via Gemini-länk
-Kör följande kommando i terminalen:
+### Option 1: Direct via Gemini Link
+Run the following command in your terminal:
 ```bash
-bun run add-book <gemini-delningslänk>
+bun run add-book <gemini-share-link>
 ```
-*(Eller med npm: `npm run add-book -- <gemini-delningslänk>`)*
+*(Or if using npm: `npm run add-book -- <gemini-share-link>`)*
 
-### Alternativ 2: Via sparad HTML-fil (om Google kräver inloggning)
-Om Google omdirigerar och blockerar vår automatiska skrapa för en viss länk, kan du enkelt:
-1. Öppna delningslänken i din vanliga webbläsare (där du är inloggad).
-2. Högerklicka på sidan och välj **Spara som...** (Spara som endast HTML, t.ex. `bok.html`).
-3. Kör skrapan mot din sparade fil:
+### Option 2: Via Saved HTML File (If Google requires login)
+If Google redirects and blocks the automated scraper for a certain link, you can easily bypass it:
+1. Open the share link in your standard web browser (where you are logged in).
+2. Right-click anywhere on the page and select **Save As...** (Save as **HTML Only**, e.g., name it `book.html`).
+3. Run the scraper against your local file:
    ```bash
-   bun run add-book ./bok.html
+   bun run add-book ./book.html
    ```
 
-**Vad skriptet gör:**
-1. Läser in sidan och extraherar saga, titel och bilder.
-2. Laddar ner alla illustrationer lokalt till `public/images/`.
-3. Sparar texten och bildreferenserna i bokdatabasen (`src/data/stories.json`).
-4. Boken dyker direkt upp som ett nytt omslag på hyllan!
+**What the script does:**
+1. Loads the page content and extracts the title, pages, and high-res image sources.
+2. Downloads all illustrations locally to `public/images/`.
+3. Stores the text and image path references in your local database (`src/data/stories.json`).
+4. The book instantly appears on a virtual shelf with its cover!
 
-### Spara och publicera dina ändringar (Commit & Deploy)
+### Save and Publish Your Changes (Commit & Deploy)
 
-När du har lagt till en ny bok behöver du spara ändringarna i Git och publicera dem så att de syns live på hemsidan. Kör följande kommandon i terminalen:
+Once you've run the scraper to add a new book, you need to save your changes in Git and publish them to make the new book visible on the live website. Run these commands in your terminal:
 
-1. **Spara lokalt (Commit):**
+1. **Save changes locally (Commit):**
    ```bash
    git add .
-   git commit -m "feat: lade till en ny bok"
+   git commit -m "feat: add new book to bookshelf"
    ```
 
-2. **Skicka till GitHub (Push):**
+2. **Upload to GitHub (Push):**
    ```bash
    git push origin main
    ```
 
-3. **Publicera live till GitHub Pages (Deploy):**
+3. **Publish live to GitHub Pages (Deploy):**
    ```bash
    bun run deploy
    ```
-   *(Detta bygger källkoden och laddar automatiskt upp den nya bokhyllan live på webben)*
+   *(This compiles the source code and automatically deploys the updated app live to the web)*
 
 ---
 
-## 🚀 Kom igång (Development)
+## 🚀 Getting Started (Development)
 
-### Köra lokalt
-1. Installera verktyg:
+### Local Development
+1. Install dependencies:
    ```bash
    bun install
    ```
-2. Starta utvecklingsservern:
+2. Start the local dev server:
    ```bash
    bun run dev
    ```
 
-### Bygga och publicera
-1. Kompilera koden:
+### Build & Deploy Manually
+1. Compile the production bundle:
    ```bash
    bun run build
    ```
-2. Driftsätt direkt till GitHub Pages:
+2. Deploy directly to GitHub Pages:
    ```bash
    bun run deploy
    ```
 
 ---
 
-Skapat med ❤️ för Vincent.
+Created with ❤️ for Vincent.
