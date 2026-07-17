@@ -51,6 +51,27 @@ bun run add-book <gemini-delningslänk>
 3. Sparar texten och bildreferenserna i bokdatabasen (`src/data/stories.json`).
 4. Boken dyker direkt upp som ett nytt omslag på hyllan!
 
+### Spara och publicera dina ändringar (Commit & Deploy)
+
+När du har lagt till en ny bok behöver du spara ändringarna i Git och publicera dem så att de syns live på hemsidan. Kör följande kommandon i terminalen:
+
+1. **Spara lokalt (Commit):**
+   ```bash
+   git add .
+   git commit -m "feat: lade till en ny bok"
+   ```
+
+2. **Skicka till GitHub (Push):**
+   ```bash
+   git push origin main
+   ```
+
+3. **Publicera live till GitHub Pages (Deploy):**
+   ```bash
+   bun run deploy
+   ```
+   *(Detta bygger källkoden och laddar automatiskt upp den nya bokhyllan live på webben)*
+
 ---
 
 ## 🚀 Kom igång (Development)
