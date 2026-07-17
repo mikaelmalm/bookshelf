@@ -32,6 +32,7 @@ Bokhyllan innehåller just nu åtta spännande berättelser:
 6. **Vincents och Wilmas stora pooldag** 🏖️
 7. **Vincents stora tågresa** 🚂
 8. **Vincents stora kranäventyr** 🏗️
+9. **Vincent och den magiska kranen** 🏗️✨
 
 ---
 
