@@ -25,3 +25,8 @@ dist-ssr
 
 # Agent files
 .agents/
+
+# Ignore local saved webpages (except index.html)
+*.html
+!index.html
+*_files/
