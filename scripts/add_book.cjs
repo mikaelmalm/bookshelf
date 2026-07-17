@@ -54,8 +54,8 @@ async function main() {
   const shareUrl = args[0];
   
   if (!shareUrl) {
-    console.error("Error: Please provide a Gemini share link.");
-    console.log("Usage: bun run add-book <gemini-share-link>\n");
+    console.error("Error: Please provide a Gemini share link or a local HTML file path.");
+    console.log("Usage:\n  bun run add-book <gemini-share-link>\n  bun run add-book <local-html-file-path>\n");
     process.exit(1);
   }
 
@@ -80,34 +80,46 @@ async function main() {
   await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
   
   try {
-    console.log("Navigating to Gemini share link...");
-    await page.goto(shareUrl, { waitUntil: 'networkidle2', timeout: 30000 });
-    await new Promise(r => setTimeout(r, 4000));
+    const isUrl = shareUrl.startsWith('http://') || shareUrl.startsWith('https://');
     
-    // Check for cookie consent wall
-    const currentUrl = page.url();
-    if (currentUrl.includes('consent.google.com')) {
-      console.log("Accepting Google cookie consent...");
-      const accepted = await page.evaluate(() => {
-        const btns = Array.from(document.querySelectorAll('button'));
-        const acceptBtn = btns.find(b => 
-          b.textContent.includes("Godkänn alla") || 
-          b.textContent.includes("Accept all") || 
-          b.textContent.includes("Jag godkänner") || 
-          b.textContent.includes("I agree") ||
-          b.textContent.includes("Accept")
-        );
-        if (acceptBtn) {
-          acceptBtn.click();
-          return true;
-        }
-        return false;
-      });
+    if (isUrl) {
+      console.log("Navigating to Gemini share link...");
+      await page.goto(shareUrl, { waitUntil: 'networkidle2', timeout: 30000 });
+      await new Promise(r => setTimeout(r, 4000));
       
-      if (accepted) {
-        await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 10000 }).catch(() => {});
-        await new Promise(r => setTimeout(r, 3000));
+      // Check for cookie consent wall
+      const currentUrl = page.url();
+      if (currentUrl.includes('consent.google.com')) {
+        console.log("Accepting Google cookie consent...");
+        const accepted = await page.evaluate(() => {
+          const btns = Array.from(document.querySelectorAll('button'));
+          const acceptBtn = btns.find(b => 
+            b.textContent.includes("Godkänn alla") || 
+            b.textContent.includes("Accept all") || 
+            b.textContent.includes("Jag godkänner") || 
+            b.textContent.includes("I agree") ||
+            b.textContent.includes("Accept")
+          );
+          if (acceptBtn) {
+            acceptBtn.click();
+            return true;
+          }
+          return false;
+        });
+        
+        if (accepted) {
+          await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 10000 }).catch(() => {});
+          await new Promise(r => setTimeout(r, 3000));
+        }
       }
+    } else {
+      const resolvedPath = path.resolve(shareUrl);
+      if (!fs.existsSync(resolvedPath)) {
+        throw new Error(`Local file not found at: ${resolvedPath}`);
+      }
+      console.log(`Loading local HTML file: ${resolvedPath}`);
+      await page.goto('file://' + resolvedPath, { waitUntil: 'networkidle2' });
+      await new Promise(r => setTimeout(r, 2000));
     }
     
     // Parse DOM elements

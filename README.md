@@ -38,15 +38,26 @@ Bokhyllan innehåller just nu åtta spännande berättelser:
 
 ## 🛠️ Lägg till fler böcker (Add more stories)
 
-För att enkelt bygga ut Vincents bibliotek finns ett inbyggt skrapverktyg. Du behöver bara köra följande kommando med din delningslänk från Gemini:
+För att enkelt bygga ut Vincents bibliotek finns ett inbyggt skrapverktyg. Du kan köra det antingen med en Gemini-delningslänk, eller med en sparad lokal HTML-fil om Google kräver inloggning för din länk.
 
+### Alternativ 1: Direkt via Gemini-länk
+Kör följande kommando i terminalen:
 ```bash
 bun run add-book <gemini-delningslänk>
 ```
 *(Eller med npm: `npm run add-book -- <gemini-delningslänk>`)*
 
+### Alternativ 2: Via sparad HTML-fil (om Google kräver inloggning)
+Om Google omdirigerar och blockerar vår automatiska skrapa för en viss länk, kan du enkelt:
+1. Öppna delningslänken i din vanliga webbläsare (där du är inloggad).
+2. Högerklicka på sidan och välj **Spara som...** (Spara som endast HTML, t.ex. `bok.html`).
+3. Kör skrapan mot din sparade fil:
+   ```bash
+   bun run add-book ./bok.html
+   ```
+
 **Vad skriptet gör:**
-1. Öppnar länken i bakgrunden.
+1. Läser in sidan och extraherar saga, titel och bilder.
 2. Laddar ner alla illustrationer lokalt till `public/images/`.
 3. Sparar texten och bildreferenserna i bokdatabasen (`src/data/stories.json`).
 4. Boken dyker direkt upp som ett nytt omslag på hyllan!
