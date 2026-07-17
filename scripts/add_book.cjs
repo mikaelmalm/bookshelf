@@ -23,11 +23,29 @@ function slugify(text) {
     .replace(/-+$/, '');
 }
 
-// Helper to download an image from a URL
+// Helper to download an image from a URL or copy it if it's a local file
 function downloadImage(url, destPath) {
   return new Promise((resolve, reject) => {
     if (!url) {
       resolve(null);
+      return;
+    }
+    
+    const isLocal = url.startsWith('file://') || (!url.startsWith('http://') && !url.startsWith('https://'));
+    
+    if (isLocal) {
+      try {
+        let localPath = url.replace(/^file:\/\//, '');
+        if (process.platform === 'win32' && localPath.startsWith('/')) {
+          localPath = localPath.substring(1);
+        }
+        localPath = decodeURIComponent(localPath);
+        
+        fs.copyFileSync(localPath, destPath);
+        resolve(destPath);
+      } catch (err) {
+        reject(err);
+      }
       return;
     }
     
