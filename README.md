@@ -19,22 +19,7 @@ Appen är designad för att vara extremt ren, enkel och lättanvänd för barn, 
 - **Ljuduppläsning**: En diskret ljudknapp gör att barnet kan få texten uppläst direkt i webbläsaren.
 - **Installera som App (PWA)**: Hemsidan kan sparas på hemskärmen på mobilen eller surfplattan och fungerar helt offline utan internetuppkoppling tack vare lokal cachning.
 
----
 
-## 📚 Vincents Böcker (The Stories)
-
-Bokhyllan innehåller just nu åtta spännande berättelser:
-1. **Vincent och den stora traktorn** 🚜
-2. **Vincents stora lopp** 🏃
-3. **Vincent, Wilma och brandbilen** 🚒
-4. **Vincent på simskola** 🏊
-5. **Vincent och den magiska grävmaskinen** 🚧
-6. **Vincents och Wilmas stora pooldag** 🏖️
-7. **Vincents stora tågresa** 🚂
-8. **Vincents stora kranäventyr** 🏗️
-9. **Vincent och den magiska kranen** 🏗️✨
-
----
 
 ## 🛠️ Lägg till fler böcker (Add more stories)
 

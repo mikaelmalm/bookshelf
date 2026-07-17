@@ -13,7 +13,7 @@ function Bookshelf({ books, onSelectBook }) {
   return (
     <div className="library-container">
       <header className="library-header">
-        <h1>Bookshelf</h1>
+        <h1>Vincents böcker</h1>
       </header>
 
       <div className="shelves-container">
