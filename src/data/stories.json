@@ -520,5 +520,63 @@
         "imageUrl": "images/vincent-och-den-magiska-kranen_page_10.jpg"
       }
     ]
+  },
+  {
+    "id": "vincents-stora-cementbil",
+    "title": "Vincents stora cementbil",
+    "shareUrl": "./bok.html",
+    "coverImage": "images/vincents-stora-cementbil_cover.jpg",
+    "pages": [
+      {
+        "pageNumber": 1,
+        "text": "Vincent har en alldeles egen cementbil. Den är klarröd, har en solgul blandare och glänser i morgonsolen. Idag har Vincent ett viktigt jobb att göra. Han sätter på sig sin gula hjälm och klättrar upp i hytten för att börja dagens äventyr.",
+        "imageUrl": "images/vincents-stora-cementbil_page_1.jpg"
+      },
+      {
+        "pageNumber": 2,
+        "text": "\"Brum, brum!\" säger motorn när Vincent vrider om nyckeln. Hela den röda bilen skakar lite grann, precis som om den vore vaken och glad. Vincent håller hårt i den stora svarta ratten och gör sig redo att köra ut på vägen.",
+        "imageUrl": "images/vincents-stora-cementbil_page_2.jpg"
+      },
+      {
+        "pageNumber": 3,
+        "text": "Den stora gula trumman där bak börjar snurra. Runt, runt, runt går den så att cementen inte ska stelna. Vincent kör förbi ett litet hus och ser sin vän Bosse som står vid vägkanten och vinkar glatt.",
+        "imageUrl": "images/vincents-stora-cementbil_page_3.jpg"
+      },
+      {
+        "pageNumber": 4,
+        "text": "Vincent kör försiktigt över den lilla träbron. \"Kla-dunk, kla-dunk\" låter det när de tunga däcken rullar över plankorna. Vincent trycker på hornet för att hälsa på fiskarna som simmar i bäcken under bron: \"Tuuut, tuuut!\"",
+        "imageUrl": "images/vincents-stora-cementbil_page_4.jpg"
+      },
+      {
+        "pageNumber": 5,
+        "text": "De kommer fram till den stora parken där ett nytt projekt ska starta. Här ska det byggas något spännande! Bosse väntar redan på platsen med sin stora ritning utrullad i händerna. \"Här ska vi vara, Vincent!\" ropar han.",
+        "imageUrl": "images/vincents-stora-cementbil_page_5.jpg"
+      },
+      {
+        "pageNumber": 6,
+        "text": "Det är dags att börja arbeta. Vincent sträcker ut handen och drar i en blank silverspak inuti hytten. Då åker en lång ränna ut från bilens röda bakdel. Det ser nästan ut som en rutschkana för cementen!",
+        "imageUrl": "images/vincents-stora-cementbil_page_6.jpg"
+      },
+      {
+        "pageNumber": 7,
+        "text": "Nu börjar det roliga på riktigt. Vincent klättrar ut och ser hur den grå cementen rinner ner för rännan från den gula trumman. \"Spla-tsch!\" låter det när den landar i gropen. Det ser ut som en tjock, grå välling.",
+        "imageUrl": "images/vincents-stora-cementbil_page_7.jpg"
+      },
+      {
+        "pageNumber": 8,
+        "text": "Bosse tar fram sin stora, platta spade av stål. Han böjer sig ner och stryker försiktigt över cementen så att den blir alldeles jämn och fin. \"Titta så slätt det blir, Vincent\", säger han och arbetar noggrant.",
+        "imageUrl": "images/vincents-stora-cementbil_page_8.jpg"
+      },
+      {
+        "pageNumber": 9,
+        "text": "Arbetet är klart och fundamentet är lagt! Vincent och Bosse firar med en ordentlig \"high five\" mitt i parken. Nu måste cementen torka under natten, och snart ska det stå en helt ny gungställning på den här platsen.",
+        "imageUrl": "images/vincents-stora-cementbil_page_9.jpg"
+      },
+      {
+        "pageNumber": 10,
+        "text": "Vincent kör den röda cementbilen hemåt igen under den vackra kvällshimlen. Han är trött men mycket nöjd med dagens viktiga jobb. Solen går ner bakom kullarna och färgar allt i rosa och lila. God natt, Vincent och den lilla cementbilen.",
+        "imageUrl": "images/vincents-stora-cementbil_page_10.jpg"
+      }
+    ]
   }
 ]
